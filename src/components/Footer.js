@@ -113,6 +113,12 @@ const FooterTop = styled.div`
   align-items: left;
   margin-bottom: 2rem;
   margin-left: 100px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
 `;
 
 const Logo = styled.div`
@@ -120,6 +126,11 @@ const Logo = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const LogoImage = styled.img`
@@ -134,6 +145,10 @@ const Description = styled.p`
   margin-bottom: 1rem;
   text-align: left;
   font-size: 17px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const FooterLinks = styled.div`
@@ -142,12 +157,24 @@ const FooterLinks = styled.div`
   width: 100%;
   max-width: 800px;
   margin-right: 100px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
 `;
 
 const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 `;
 
 const ColumnTitle = styled.h3`
@@ -174,19 +201,31 @@ const FooterBottom = styled.div`
   align-items: center;
   border-top: 1px solid #e5e7eb;
   padding: 1.5rem;
-  width: 100%;
   background-color: #e1240f;
   color: #fff;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const Credits = styled.p`
   font-size: 1.12rem;
   margin: 0;
   text-align: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const Copyright = styled.p`
   font-size: 1.12rem;
   margin: 0;
-`;
 
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;

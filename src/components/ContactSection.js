@@ -44,10 +44,11 @@ export default ContactSection;
 const Container = styled.div`
   text-align: center;
   padding: 2rem 1rem;
-  border: 1px solid #e5e7eb;
+  border: 3px solid #e5e7eb;
   border-radius: 0.5rem;
   margin: 2rem auto;
-  max-width: 800px;
+  width: 80%; /* Set a specific width */
+  max-width: 1000px; /* Optional: set a max-width for better control */
 `;
 
 const Title = styled.h2`

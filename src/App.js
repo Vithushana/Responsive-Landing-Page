@@ -8,7 +8,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 const Section = styled.section`
-  padding: auto; /* Adjusted padding-top to 150px to account for fixed header */
+  padding: 150px 0;
   background-color: #f4f4f4;
   border-bottom: 1px solid #ddd;
 
@@ -34,16 +34,14 @@ const AppContainer = styled.div`
 const App = () => {
   return (
     <AppContainer>
-      <div>
-        <Header />
-        <Features />
-        <Pricing />
-        <Templates />
-        <Section id="resources">
+      <Header />
+      <Features />
+      <Pricing />
+      <Templates />
+      <Section id="resources">
         <ContactSection />
-        <Footer />
-        </Section>
-      </div>
+      </Section>
+      <Footer />
     </AppContainer>
   );
 };

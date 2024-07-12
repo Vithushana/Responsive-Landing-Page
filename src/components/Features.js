@@ -8,9 +8,9 @@ import LaunchLogo from '../images/lanuch.png';
 import ResponseLogo from '../images/responsive.png'; 
 import VisibilityLogo from '../images/visibility.png'; 
 import ControlLogo from '../images/control.png'; 
-import explo from '../images/explo.png';
 import underlineImage from '../images/back.png';
 
+import PhotoAlbum from './PhotoAlbum'; // Import the PhotoAlbum component
 
 const Section = styled.section`
   padding: 150px 25px 100px;
@@ -79,7 +79,7 @@ const SignUpButton1 = styled.a`
   font-weight: bold;
 
   &:hover {
-    background-color: red;
+    background-color: #e5e5e7;
   }
 `;
 
@@ -151,19 +151,13 @@ const FeastoContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding-right: 3px;
-
-    img {
-      max-width: 450%;
-      height: auto;
-      margin-left: 220px;
-    }
   }
 
   .right-section {
     flex: 2;
     text-align: left;
     max-width: 600px;
-    margin-left: 200px;
+    margin-left: 20px; /* Adjust margin to align with the left section */
 
     h1 {
       font-size: 40px;
@@ -215,13 +209,13 @@ const Features = () => {
       <br></br>
       <ButtonContainer>
         <SignUpButton href="#sign-up">Build Your Website Now</SignUpButton>
-        <SignUpButton1 href="#get-demo">Get a Demo</SignUpButton1>
+        <SignUpButton1 href="##pricing && #templetes">Get a Demo</SignUpButton1>
       </ButtonContainer>
       <Image src={ImagePlaceholder} alt="Feature Image" />
       <Image1 src={ImagePlaceholder1} alt="Feature Image" />
       <FeastoContainer>
         <div className="left-section">
-          <img src={explo} alt="explo" />
+          <PhotoAlbum />
         </div>
         <div className="right-section">
           <h3>EXPLORE FASTO</h3>

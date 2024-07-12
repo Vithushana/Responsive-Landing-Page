@@ -7,7 +7,7 @@ import clothimage from '../images/cloths.webp';
 import FaqSection from './FaqSection';
 
 const Section = styled.section`
-  padding: auto;
+  width: 100%;
   background-color: #f4f4f4;
   border-bottom: 1px solid #ddd;
 

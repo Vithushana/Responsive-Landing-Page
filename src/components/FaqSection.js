@@ -16,8 +16,8 @@ const Title = styled.h1`
   color: #333;
   line-height: 1; // Adjust this value as needed
 
-  span{
-  color: #e1240f;
+  span {
+    color: #e1240f;
   }
 `;
 
@@ -31,13 +31,14 @@ const SubTitle = styled.h2`
 `;
 
 const FaqContainer = styled.div`
-  width: 150%;
-  max-width: 1000px;
+  width: 90%; /* Adjust this value to increase the width */
+  max-width: 1100px; /* Optional: set a max-width for better control */
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 2px solid #ddd;
+  border-radius: 9px;
   overflow: hidden;
-  line-height: 1.9; // Adjust this value as needed
+  line-height: 1.9; /* Adjust this value as needed */
+  margin: 0 auto; /* Center the container */
 `;
 
 const FaqItem = styled.div`
@@ -78,15 +79,9 @@ const Icon = styled.span`
   color: #333;
 `;
 
-const FAQ = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleFaq = () => {
-    setIsOpen(!isOpen);
-  };
-
+const FAQ = ({ index, question, answer, isOpen, onClick }) => {
   return (
-    <FaqItem onClick={toggleFaq}>
+    <FaqItem onClick={() => onClick(index)}>
       <FaqQuestion>
         {question}
         <Icon>{isOpen ? '-' : '+'}</Icon>
@@ -97,6 +92,8 @@ const FAQ = ({ question, answer }) => {
 };
 
 const FaqSection = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqData = [
     {
       question: 'How can FEASTO help me get my shop online?',
@@ -129,13 +126,24 @@ const FaqSection = () => {
     // Add more FAQs as needed
   ];
 
+  const handleFaqClick = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <Section>
       <SubTitle>Frequently Asked Questions</SubTitle>
       <Title>All you need to know <br /> about <span>FEASTO</span></Title>
       <FaqContainer>
         {faqData.map((faq, index) => (
-          <FAQ key={index} question={faq.question} answer={faq.answer} />
+          <FAQ
+            key={index}
+            index={index}
+            question={faq.question}
+            answer={faq.answer}
+            isOpen={openIndex === index}
+            onClick={handleFaqClick}
+          />
         ))}
       </FaqContainer>
     </Section>

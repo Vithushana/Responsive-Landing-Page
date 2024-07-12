@@ -1,51 +1,70 @@
 // src/components/Header.js
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link as ScrollLink } from 'react-scroll';
+import { FaBars } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 import logo from '../images/logo.png';
 
 const HeaderContainer = styled.header`
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 45px;
+  padding: 25px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
+  @media (max-width: 1024px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    flex-direction: row;
+  }
 `;
 
-const LeftContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 45px;
-`;
-
-const Image = styled.img`
+const Logo = styled.img`
 `;
 
 const NavLinks = styled.nav`
   display: flex;
   gap: 20px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
 
-  a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
-
-    &:hover {
-      color: #007BFF;
-    }
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 `;
 
-const RightContainer = styled.div`
+const NavLink = styled(ScrollLink)`
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    text-align: center;
+  }
+`;
+
+const ButtonContainer = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 18px;
+  width: 400px;
   align-items: center;
 `;
 
@@ -59,14 +78,19 @@ const SignUpButton = styled.a`
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 100px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #bababa;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    right: 40px;
   }
 `;
 
-const SignUpButton1 = styled.a`
+const GetDemoButton = styled.a`
   padding: 10px 20px;
   display: flex;
   justify-content: center;
@@ -79,26 +103,45 @@ const SignUpButton1 = styled.a`
   font-weight: bold;
 
   &:hover {
-    background-color: red;
+    background-color: #e5e5e7;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const HamburgerMenu = styled.div`
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    left: 30px;
   }
 `;
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <HeaderContainer>
-      <LeftContainer>
-        <Image src={logo} alt="Logo" />
-        <NavLinks>
-          <ScrollLink to="features" smooth={true} duration={500}>Features</ScrollLink>
-          <ScrollLink to="pricing" smooth={true} duration={500}>Pricing</ScrollLink>
-          <ScrollLink to="templates" smooth={true} duration={500}>Templates</ScrollLink>
-          <ScrollLink to="resources" smooth={true} duration={500}>Resources</ScrollLink>
-        </NavLinks>
-      </LeftContainer>
-      <RightContainer>
-        <SignUpButton1 href="#get-demo">Get a Demo</SignUpButton1>
+      <Logo src={logo} alt="Logo" />
+      <HamburgerMenu onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </HamburgerMenu>
+      <NavLinks isOpen={isOpen}>
+        <NavLink to="features" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Features</NavLink>
+        <NavLink to="pricing" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Pricing</NavLink>
+        <NavLink to="templates" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Templates</NavLink>
+        <NavLink to="resources" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Resources</NavLink>
+      </NavLinks>
+      <ButtonContainer>
+        <GetDemoButton href="#pricing">Get a Demo</GetDemoButton>
         <SignUpButton href="#sign-up">Sign up for free</SignUpButton>
-      </RightContainer>
+      </ButtonContainer>
     </HeaderContainer>
   );
 };
