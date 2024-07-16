@@ -43,12 +43,12 @@ export default ContactSection;
 
 const Container = styled.div`
   text-align: center;
+  background-color: #fff;
   padding: 2rem 1rem;
   border: 3px solid #e5e7eb;
   border-radius: 0.5rem;
   margin: 2rem auto;
-  width: 80%; /* Set a specific width */
-  max-width: 1000px; /* Optional: set a max-width for better control */
+  width: 80%;/* Optional: set a max-width for better control */
 `;
 
 const Title = styled.h2`

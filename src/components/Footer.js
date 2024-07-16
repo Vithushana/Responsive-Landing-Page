@@ -22,7 +22,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faLinkedin} />
             </SocialIconLink>
             <SocialIconLink href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faFacebook} color='#e1240f' />
             </SocialIconLink>
             <SocialIconLink href="https://instagram.com" target="_blank" aria-label="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
@@ -63,7 +63,7 @@ const Footer = () => {
         </FooterLinks>
       </FooterTop>
       <FooterBottom>
-        <Credits>Designed & Developed with 🤍 by Cognitix</Credits>
+        <Credits>Designed & Developed with 🤍 by<span> Cognitix</span></Credits>
         <Copyright>© 2022 Feasto. All rights reserved.</Copyright>
       </FooterBottom>
     </FooterContainer>
@@ -76,6 +76,7 @@ const SocialLinksContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  background-color: #fff;
 `;
 
 const SocialIconLink = styled.a`
@@ -102,7 +103,7 @@ const SocialIconLink = styled.a`
 `;
 
 const FooterContainer = styled.footer`
-  background-color: #f8f9fa;
+  background-color: #fff;
   padding: auto;
   color: #6b7280;
 `;
@@ -116,8 +117,8 @@ const FooterTop = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
-    margin-left: 0;
+    align-items: flex-start;
+    margin-left: 20px;
   }
 `;
 
@@ -125,18 +126,11 @@ const Logo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 3rem;
-
-  @media (max-width: 768px) {
-    align-items: center;
-    text-align: center;
-  }
+  margin-bottom: 1rem;
 `;
 
 const LogoImage = styled.img`
-  width: 300px;
-  height: 48px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   margin-top: 1.5rem;
 `;
 
@@ -144,10 +138,11 @@ const Description = styled.p`
   margin: 0;
   margin-bottom: 1rem;
   text-align: left;
-  font-size: 17px;
+  font-size: 18px;
+  color: black;
 
   @media (max-width: 768px) {
-    text-align: center;
+    text-align: left;
   }
 `;
 
@@ -159,9 +154,11 @@ const FooterLinks = styled.div`
   margin-right: 100px;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row; /* Change to row for 2x2 layout */
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin-right: 0;
+    margin-right: 0px;
   }
 `;
 
@@ -171,7 +168,7 @@ const Column = styled.div`
   align-items: flex-start;
 
   @media (max-width: 768px) {
-    align-items: center;
+    flex: 0 0 50%; /* Two columns in a row */
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -186,9 +183,10 @@ const ColumnTitle = styled.h3`
 
 const Link = styled.a`
   font-size: 1.1rem;
-  color: #6b7280;
+  color: black;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.9rem;
 
   &:hover {
     color: #f00;
@@ -199,7 +197,7 @@ const FooterBottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #e1240f;
   padding: 1.5rem;
   background-color: #e1240f;
   color: #fff;
@@ -214,6 +212,10 @@ const Credits = styled.p`
   font-size: 1.12rem;
   margin: 0;
   text-align: left;
+
+  span{
+  text-decoration: underline;
+  }
 
   @media (max-width: 768px) {
     text-align: center;

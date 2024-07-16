@@ -4,18 +4,17 @@ import styled from 'styled-components';
 import ImagePlaceholder from '../images/f3.png';
 import ImagePlaceholder1 from '../images/line.png';
 
-import LaunchLogo from '../images/lanuch.png';
-import ResponseLogo from '../images/responsive.png'; 
-import VisibilityLogo from '../images/visibility.png'; 
-import ControlLogo from '../images/control.png'; 
+import LaunchLogo from '../exp_img/material-symbols_rocket-launch-outline-rounded.png';
+import ResponseLogo from '../exp_img/tabler_message-2-bolt.png'; 
+import VisibilityLogo from '../exp_img/fluent_arrow-growth-24-filled.png'; 
+import ControlLogo from '../exp_img/mdi_controller-outline.png'; 
 import underlineImage from '../images/back.png';
 
 import PhotoAlbum from './PhotoAlbum'; // Import the PhotoAlbum component
 
 const Section = styled.section`
   padding: 150px 25px 100px;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center align the content */
@@ -31,16 +30,27 @@ const Section = styled.section`
     font-size: 24px; /* Increase font size */
     margin-bottom: 10px; /* Add bottom margin */
   }
+
+  @media (max-width: 768px) {
+    padding: 100px 15px 50px;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
 `;
 
 const SignUpButton = styled.a`
   padding: 11px 20px;
+  text-align: center;
   background-color: #e1240f;
   color: #fff;
   border-radius: 5px;
@@ -71,6 +81,7 @@ const SignUpButton = styled.a`
 
 const SignUpButton1 = styled.a`
   padding: 10px 20px;
+  text-align: center;
   background-color: white;
   color: black;
   border: 2px solid #dadadd;
@@ -92,15 +103,44 @@ const Image = styled.img`
 const Image1 = styled.img`
   max-width: 100%;
   height: auto;
-  animation: car 9s linear infinite;
+  animation: car 15s linear infinite;
 
   @keyframes car {
     0% {
       transform: translateX(100%);
     }
     100% {
-      transform: translateX(-220%);
+      transform: translateX(-100%);
     }
+  }
+`;
+
+const LoopingImageContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Adjust as needed */
+  height: auto;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path/to/your/image.jpg'); /* Replace with your image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: car 15s linear infinite;
+  }
+
+  &::before {
+    animation-delay: -5s;
+  }
+
+  &::after {
+    animation-delay: -10s;
   }
 `;
 
@@ -131,16 +171,29 @@ const Heading = styled.h1`
       margin-right: 10px;
     }
   }
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    .back::after {
+      height: 12px;
+    }
+  }
 `;
 
 const SubHeading = styled.p`
-  font-size: 24px;
+  font-size: 14px;
+  font-weight: bold;
   color: #e1240f;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const FeastoContainer = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   max-width: 1200px;
   margin-top: 20px;
@@ -173,7 +226,7 @@ const FeastoContainer = styled.div`
     .feasto-section h2 {
       color: #2c3e50;
       margin-bottom: 10px;
-      font-siz: 20px;
+      font-size: 20px;
       line-height: 0.005;
     }
 
@@ -192,9 +245,44 @@ const FeastoContainer = styled.div`
     h1 {
       color: black;
     }
-     span{
-     color: #e1240f;
-     } 
+    h3{
+      font-size: 15px;
+    }
+    span {
+      color: #e1240f;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+
+    .left-section,
+    .right-section {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0px;
+      padding: 0 15px;
+    }
+
+    .feasto-section img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .feasto-section h2 {
+      font-size: 16px;
+    }
+
+    .feasto-section p {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+    h3{
+      margin-left: 0px;
+    }
   }
 `;
 
@@ -204,15 +292,17 @@ const Features = () => {
       <SubHeading>Seamless Setup, Quick, Easy and No-Code</SubHeading>
       <Heading>
         Build Website for your <br /> Business within
-         <div className='back'>3Minutes</div>
+        <div className='back'>3Minutes</div>
       </Heading>
-      <br></br>
+      <br />
       <ButtonContainer>
         <SignUpButton href="#sign-up">Build Your Website Now</SignUpButton>
         <SignUpButton1 href="##pricing && #templetes">Get a Demo</SignUpButton1>
       </ButtonContainer>
       <Image src={ImagePlaceholder} alt="Feature Image" />
-      <Image1 src={ImagePlaceholder1} alt="Feature Image" />
+      <LoopingImageContainer>
+        <Image1 src={ImagePlaceholder1} alt="Feature Image" />
+      </LoopingImageContainer>
       <FeastoContainer>
         <div className="left-section">
           <PhotoAlbum />

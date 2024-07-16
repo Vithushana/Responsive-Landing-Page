@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   padding: auto;
-  background-color: #f4f4f4;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,8 +31,7 @@ const SubTitle = styled.h2`
 `;
 
 const FaqContainer = styled.div`
-  width: 90%; /* Adjust this value to increase the width */
-  max-width: 1100px; /* Optional: set a max-width for better control */
+  width: 82%;
   background-color: #fff;
   border: 2px solid #ddd;
   border-radius: 9px;
@@ -56,7 +55,7 @@ const FaqQuestion = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #f9f9f9;
+  background-color: #fff;
   font-weight: bold;
   font-size: 20px;
   color: #333;

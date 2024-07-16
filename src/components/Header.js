@@ -30,14 +30,16 @@ const HeaderContainer = styled.header`
 `;
 
 const Logo = styled.img`
+  margin-left: 60px;
 `;
 
 const NavLinks = styled.nav`
   display: flex;
   gap: 20px;
   color: black;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 17px;
+  margin-left: 20px;
+  color: black;
 
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -115,6 +117,8 @@ const HamburgerMenu = styled.div`
   display: none;
   font-size: 24px;
   cursor: pointer;
+  margin-top: 3px;
+  color: #888;
 
   @media (max-width: 768px) {
     display: block;
@@ -128,20 +132,24 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo src={logo} alt="Logo" />
-      <HamburgerMenu onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </HamburgerMenu>
-      <NavLinks isOpen={isOpen}>
-        <NavLink to="features" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Features</NavLink>
-        <NavLink to="pricing" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Pricing</NavLink>
-        <NavLink to="templates" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Templates</NavLink>
-        <NavLink to="resources" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Resources</NavLink>
-      </NavLinks>
-      <ButtonContainer>
-        <GetDemoButton href="#pricing">Get a Demo</GetDemoButton>
-        <SignUpButton href="#sign-up">Sign up for free</SignUpButton>
-      </ButtonContainer>
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+        <Logo src={logo} alt="Logo" />
+        <HamburgerMenu onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </HamburgerMenu>
+        <NavLinks isOpen={isOpen}>
+          <NavLink to="features" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Features</NavLink>
+          <NavLink to="pricing" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Pricing</NavLink>
+          <NavLink to="templates" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Templates</NavLink>
+          <NavLink to="resources" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Resources</NavLink>
+        </NavLinks>
+      </div>
+      <div>
+        <ButtonContainer>
+          <GetDemoButton href="#pricing">Get a Demo</GetDemoButton>
+          <SignUpButton href="#sign-up">Sign up for free</SignUpButton>
+        </ButtonContainer>
+      </div>
     </HeaderContainer>
   );
 };

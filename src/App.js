@@ -8,9 +8,8 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 const Section = styled.section`
-  padding: 150px 0;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  padding: auto;
+  background-color: #fff;
 
   h2 {
     text-align: center;
@@ -36,8 +35,8 @@ const App = () => {
     <AppContainer>
       <Header />
       <Features />
-      <Pricing />
       <Templates />
+      <Pricing />
       <Section id="resources">
         <ContactSection />
       </Section>
