@@ -9,62 +9,66 @@ const Footer = () => {
     <FooterContainer>
       <FooterTop>
         <Logo>
-          <LogoImage src={logo} alt="Feasto" />
+          <LogoImage src={logo} alt="EcoManage" />
           <Description>
-            Feasto simplifies creating a stunning,
+            EcoManage provides a seamless platform for efficient 
             <br />
-            professional web store with its user-friendly
+            garbage management, ensuring a cleaner and 
             <br />
-            templates and quick setup.
+            greener environment for everyone.
           </Description>
           <SocialLinksContainer>
             <SocialIconLink href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon icon={faLinkedin} color='#28a745'/>
             </SocialIconLink>
             <SocialIconLink href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <FontAwesomeIcon icon={faFacebook} color='#e1240f' />
+              <FontAwesomeIcon icon={faFacebook} color='#28a745' />
             </SocialIconLink>
             <SocialIconLink href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faInstagram} color='#28a745'/>
             </SocialIconLink>
             <SocialIconLink href="https://whatsapp.com" target="_blank" aria-label="WhatsApp">
-              <FontAwesomeIcon icon={faWhatsapp} />
+              <FontAwesomeIcon icon={faWhatsapp} color='#28a745'/>
             </SocialIconLink>
           </SocialLinksContainer>
         </Logo>
         <FooterLinks>
           <Column>
             <ColumnTitle>Company</ColumnTitle>
-            <Link href="#">About us</Link>
-            <Link href="#">Contact us</Link>
+            <Link href="#">About Us</Link>
+            <Link href="#">Contact Us</Link>
             <Link href="#">Careers</Link>
-            <Link href="#">Privacy policy</Link>
-            <Link href="#">Terms & service</Link>
+            <Link href="#">Privacy Policy</Link>
+            <Link href="#">Terms & Conditions</Link>
           </Column>
           <Column>
-            <ColumnTitle>Templates</ColumnTitle>
-            <Link href="#">Restaurants & Food Stalls</Link>
-            <Link href="#">Retail stores</Link>
-            <Link href="#">Grocery stores</Link>
+            <ColumnTitle>Services</ColumnTitle>
+            <Link href="#">Residential Waste Pickup</Link>
+            <Link href="#">Recycling Services</Link>
+            <Link href="#">Commercial Waste Solutions</Link>
+            <Link href="#">Hazardous Waste Management</Link>
           </Column>
           <Column>
             <ColumnTitle>Resources</ColumnTitle>
             <Link href="#">Blogs</Link>
-            <Link href="#">Knowledge base</Link>
-            <Link href="#">Help center</Link>
+            <Link href="#">Knowledge Base</Link>
+            <Link href="#">Sustainability Tips</Link>
+            <Link href="#">Help Center</Link>
           </Column>
           <Column>
             <ColumnTitle>Features</ColumnTitle>
-            <Link href="#">WhatsApp order management</Link>
-            <Link href="#">Digital storefront</Link>
-            <Link href="#">Insightful analytics</Link>
-            <Link href="#">Effortless offer management</Link>
+            <Link href="#">Real-Time Tracking</Link>
+            <Link href="#">Waste Segregation Guide</Link>
+            <Link href="#">Eco-Friendly Initiatives</Link>
+            <Link href="#">Custom Pickup Schedules</Link>
           </Column>
         </FooterLinks>
       </FooterTop>
       <FooterBottom>
-        <Credits>Designed & Developed with 🤍 by<span> Cognitix</span></Credits>
-        <Copyright>© 2022 Feasto. All rights reserved.</Copyright>
+        <Credits>
+          Designed & Developed with ♻️ by <span>EcoSolutions</span>
+        </Credits>
+        <Copyright>© 2024 EcoManage. All rights reserved.</Copyright>
       </FooterBottom>
     </FooterContainer>
   );
@@ -189,7 +193,7 @@ const Link = styled.a`
   line-height: 1.9rem;
 
   &:hover {
-    color: #f00;
+    color: #28a745;
   }
 `;
 
@@ -197,9 +201,9 @@ const FooterBottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #e1240f;
+  border-top: 1px solid #28a745;
   padding: 1.5rem;
-  background-color: #e1240f;
+  background-color: #28a745;
   color: #fff;
 
   @media (max-width: 768px) {
@@ -213,8 +217,8 @@ const Credits = styled.p`
   margin: 0;
   text-align: left;
 
-  span{
-  text-decoration: underline;
+  span {
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {

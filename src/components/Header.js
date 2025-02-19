@@ -1,10 +1,9 @@
-// src/components/Header.js
+// Header.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link as ScrollLink } from 'react-scroll';
-import { FaBars } from 'react-icons/fa';
-import { FaTimes } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../images/logo.png';
 
 const HeaderContainer = styled.header`
@@ -15,31 +14,23 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 25px;
-  background-color: #fff;
+  background-color: #D3F1DF;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-
-  @media (max-width: 1024px) {
-    padding: 20px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 15px;
-    flex-direction: row;
-  }
 `;
 
 const Logo = styled.img`
   margin-left: 60px;
+  width: 90px; /* Adjust width as per your preference */
+  height: auto; /* Keep the aspect ratio intact */
 `;
 
 const NavLinks = styled.nav`
   display: flex;
   gap: 20px;
   color: black;
-  font-size: 17px;
+  font-size: 19px;
   margin-left: 20px;
-  color: black;
 
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -70,19 +61,19 @@ const ButtonContainer = styled.div`
   align-items: center;
 `;
 
-const SignUpButton = styled.a`
+const SignUpButton = styled(Link)` /* Use Link for navigation */
   padding: 11px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e1240f;
+  background-color: #28a745;
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
 
   &:hover {
-    background-color: #bababa;
+    background-color: #218838;
   }
 
   @media (max-width: 768px) {
@@ -92,7 +83,7 @@ const SignUpButton = styled.a`
   }
 `;
 
-const GetDemoButton = styled.a`
+const ReportIssueButton = styled.a`
   padding: 10px 20px;
   display: flex;
   justify-content: center;
@@ -132,22 +123,22 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
         <Logo src={logo} alt="Logo" />
         <HamburgerMenu onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </HamburgerMenu>
         <NavLinks isOpen={isOpen}>
-          <NavLink to="features" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Features</NavLink>
-          <NavLink to="pricing" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Pricing</NavLink>
-          <NavLink to="templates" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Templates</NavLink>
-          <NavLink to="resources" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Resources</NavLink>
+          <NavLink to="about" smooth={true} duration={500} onClick={() => setIsOpen(false)}>About Us</NavLink>
+          <NavLink to="services" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Services</NavLink>
+          <NavLink to="recycling-tips" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Recycling Tips</NavLink>
+          <NavLink to="contact" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Contact Us</NavLink>
         </NavLinks>
       </div>
       <div>
         <ButtonContainer>
-          <GetDemoButton href="#pricing">Get a Demo</GetDemoButton>
-          <SignUpButton href="#sign-up">Sign up for free</SignUpButton>
+          <ReportIssueButton href="#report">Report an Issue</ReportIssueButton>
+          <SignUpButton to="/signup">Sign up</SignUpButton> {/* Link to /signup */}
         </ButtonContainer>
       </div>
     </HeaderContainer>

@@ -1,11 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Features from './components/Features';
-import Pricing from './components/Pricing';
-import Templates from './components/Templates';
+import Services from './components/Services';
+import RecyclingTips from './components/RecyclingTips';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import SignupPage from './components/SignupPage'; // Import the SignupPage component
+import LoginPage from './components/LoginPage';
 
 const Section = styled.section`
   padding: auto;
@@ -32,16 +35,26 @@ const AppContainer = styled.div`
 
 const App = () => {
   return (
-    <AppContainer>
-      <Header />
-      <Features />
-      <Templates />
-      <Pricing />
-      <Section id="resources">
-        <ContactSection />
-      </Section>
-      <Footer />
-    </AppContainer>
+    <Router>
+      <AppContainer>
+        <Header />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Features />
+              <RecyclingTips />
+              <Services />
+              <Section id="resources">
+                <ContactSection />
+              </Section>
+            </>
+          } />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+        <Footer />
+      </AppContainer>
+    </Router>
   );
 };
 

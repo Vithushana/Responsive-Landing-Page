@@ -2,77 +2,86 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import FaqSection from './FaqSection';
 
-const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(true);
+const Services = () => {
+  const [isResidential, setIsResidential] = useState(true);
 
   return (
-    <Section id="pricing">
+    <Section id="services">
       <Container>
         <Header>
           <HeaderContent>
             <div>
-              <h1>PRICING & PLANS</h1>
-              <Title>Perfect Balance of <br /> Features & Affordability</Title>
+              <h1>SERVICES WE OFFER</h1>
+              <Title>Comprehensive Garbage Management <br /> for All Needs</Title>
               <Description>
-                Feasto simplifies creating a stunning, professional web store with its <br /> user-friendly templates and quick setup. Our powerful features ensure a <br /> seamless experience.
+                We provide tailored waste management solutions for residential, <br />
+                commercial, and industrial needs. Focused on sustainability and <br />
+                efficiency, our services help keep your environment clean.
               </Description>
             </div>
             <Toggle>
-              <span1>Monthly</span1>
+              <span1>Residential</span1>
               <Switch>
-                <Input type="checkbox" checked={isAnnual} onChange={() => setIsAnnual(!isAnnual)} />
+                <Input
+                  type="checkbox"
+                  checked={isResidential}
+                  onChange={() => setIsResidential(!isResidential)}
+                />
                 <Slider />
               </Switch>
-              <span>Annually</span>
+              <span>Commercial</span>
             </Toggle>
           </HeaderContent>
         </Header>
-        <Plans>
-          <Plan>
+        <ServiceTiers>
+          <ServiceCard>
             <div style={{ padding: '1.5rem' }}>
-              <PlanHeader>FREE</PlanHeader>
-              <Price>$0</Price>
-              <Button>Start for FREE</Button>
-              <FeatureList>
-                <Feature>Unlimited orders</Feature>
-                <Feature>Unlimited products listing</Feature>
-                <Feature>Unlimited offer creation</Feature>
-                <FeatureDisabled>Monthly 2 hrs Marketing support</FeatureDisabled>
-                <FeatureDisabled>Premium customer care</FeatureDisabled>
-                <FeatureDisabled>Custom domain</FeatureDisabled>
-              </FeatureList>
+              <ServiceHeader>BASIC WASTE COLLECTION</ServiceHeader>
+              <ServiceDetails>
+                Reliable weekly waste pickup for households. Ideal for maintaining <br />
+                a clean and healthy environment.
+              </ServiceDetails>
+              <ServiceList>
+                <ServiceFeature>Regular garbage collection</ServiceFeature>
+                <ServiceFeature>Recyclables sorting</ServiceFeature>
+                <ServiceFeatureDisabled>Composting solutions</ServiceFeatureDisabled>
+                <ServiceFeatureDisabled>Special waste handling</ServiceFeatureDisabled>
+                <ServiceFeatureDisabled>24/7 support</ServiceFeatureDisabled>
+              </ServiceList>
             </div>
-          </Plan>
-          <Plan1>
-            <PlanHeader>
-              <SaveBadge>Save 25%</SaveBadge>
-              PRO - Annual plan
-            </PlanHeader>
+          </ServiceCard>
+          <ServiceCardHighlighted>
+            <ServiceHeader>
+              <HighlightBadge>Recommended</HighlightBadge>
+              PREMIUM MANAGEMENT
+            </ServiceHeader>
             <div style={{ padding: '1.5rem' }}>
-              <Price style={{ color: isAnnual? '#aaa': '#fff', margin: '0.5rem 0', fontSize: '20px', textDecoration: 'line-through' }}>$9.99</Price>
-              <Price>${isAnnual ? '7.5' : '9.99'}<PricePeriod>{isAnnual ? 'Monthly, Billed annually' : 'Monthly'}</PricePeriod></Price>
-              <Button1>Get 14 days free trial!</Button1>
-              <FeatureList>
-                <Feature>Unlimited orders</Feature>
-                <Feature>Unlimited products listing</Feature>
-                <Feature>Unlimited offer creation</Feature>
-                <Feature>Monthly 2 hrs marketing support</Feature>
-                <Feature>Premium customer care</Feature>
-                <Feature>Custom domain</Feature>
-              </FeatureList>
+              <ServiceDetails>
+                Comprehensive waste management for businesses and industries, <br />
+                focusing on eco-friendly disposal methods.
+              </ServiceDetails>
+              <ServiceList>
+                <ServiceFeature>Regular garbage collection</ServiceFeature>
+                <ServiceFeature>Recyclables sorting</ServiceFeature>
+                <ServiceFeature>Composting solutions</ServiceFeature>
+                <ServiceFeature>Special waste handling</ServiceFeature>
+                <ServiceFeature>24/7 support</ServiceFeature>
+              </ServiceList>
             </div>
-          </Plan1>
-        </Plans>
+          </ServiceCardHighlighted>
+        </ServiceTiers>
       </Container>
       <FaqSection />
     </Section>
   );
 };
 
-export default Pricing;
+export default Services;
 
 // Styled components (with media queries)
 const Section = styled.section`
+  padding: 4rem 0;
+  background-color: #f9fafb;
 `;
 
 const Container = styled.div`
@@ -87,7 +96,7 @@ const Header = styled.div`
   margin-bottom: 2rem;
 
   h1 {
-    color: #e1240f;
+    color: #34a853;
     font-size: 18px;
     margin-left: 50px;
 
@@ -141,7 +150,7 @@ const Toggle = styled.div`
   
   span {
     font-size: 24px;
-    color: #e1240f;
+    color: #34a853;
   }
 
   span1 {
@@ -169,7 +178,7 @@ const Input = styled.input`
   height: 0;
 
   &:checked + span {
-    background-color: #e1240f;
+    background-color: #34a853;
   }
 
   &:checked + span:before {
@@ -201,7 +210,7 @@ const Slider = styled.span`
   }
 `;
 
-const Plans = styled.div`
+const ServiceTiers = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -212,111 +221,66 @@ const Plans = styled.div`
   }
 `;
 
-const Plan = styled.div`
+const ServiceCard = styled.div`
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   text-align: center;
   width: 350px;
   margin-bottom: 2rem;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    order: 2; /* Change order for mobile */
-  }
 `;
 
-const Plan1 = styled.div`
-  border: 3px solid #e1240f;
+const ServiceCardHighlighted = styled.div`
+  border: 3px solid #34a853;
   border-radius: 0.5rem;
   text-align: center;
   width: 350px;
   margin-bottom: 2rem;
   box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    order: 1; /* Change order for mobile */
-  }
 `;
 
-const PlanHeader = styled.div`
+const ServiceHeader = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
-  color: #e1240f;
+  color: #34a853;
   margin-bottom: 1rem;
 `;
 
-const SaveBadge = styled.div`
-  background-color: #e1240f;
+const HighlightBadge = styled.div`
+  background-color: #34a853;
   color: #fff;
-  padding: 0.75rem 0.5rem;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-`;
-
-const Price = styled.div`
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-`;
-
-const PricePeriod = styled.div`
+  padding: 0.5rem;
   font-size: 0.875rem;
-  color: #6b7280;
+  margin-bottom: 0.5rem;
+  display: inline-block;
 `;
 
-const Button = styled.button`
-  background-color: white;
-  color: black;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 600;
-  border: 2px solid #c1c1c5;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  margin-bottom: 1rem;
-
-  &:hover {
-    background-color: #d00;
-  }
-`;
-
-const Button1 = styled.button`
-  background-color: #e1240f;
-  color: #fff;
-  width: 100%;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  cursor: pointer;
+const ServiceDetails = styled.p`
   font-size: 1rem;
+  color: #6b7280;
   margin-bottom: 1rem;
-
-  &:hover {
-    background-color: #d00;
-  }
 `;
 
-const FeatureList = styled.ul`
+const ServiceList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: left;
 `;
 
-const Feature = styled.li`
+const ServiceFeature = styled.li`
   color: black;
   margin: 0.5rem 0;
   font-size: 16px;
 
   &::before {
     content: '✓ ';
-    color: #e1240f;
+    color: #34a853;
     font-weight: bold;
   }
 `;
 
-const FeatureDisabled = styled.li`
+const ServiceFeatureDisabled = styled.li`
   color: #aaa;
   margin: 0.5rem 0;
   font-size: 16px;

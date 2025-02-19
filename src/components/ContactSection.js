@@ -1,37 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import email from '../images/email.png';
-import call from '../images/call.png';
-import location from '../images/location.png';
+import email from '../images/email.png';  // Replace with a relevant email icon
+import call from '../images/call.png';    // Replace with a relevant phone icon
+import location from '../images/location.png';  // Replace with a relevant location icon
 
 const ContactSection = () => {
   return (
     <Container>
-      <Title>Still have some question?</Title>
+      <Title>Contact Us for Legal Reforms Queries</Title>
       <Description>
-        Can't find the answer that you're looking for? Feel free to our team reach out for more info.
+        If you have any questions or need more information on the reforms in Sri Lanka's legal system, feel free to reach out to our team.
       </Description>
       <ContactOptions>
         <ContactOption>
-          <Icon><Image src={email} alt="email"/></Icon>
+          <Icon><Image src={email} alt="email" /></Icon>
           <Info>
             <Label>Email address</Label>
-            <Value>hello@feasto.io</Value>
+            <Value>info@legalreforms.lk</Value> {/* Example contact email */}
           </Info>
         </ContactOption>
         <ContactOption>
-          <Icon><Image src={call} alt="email"/></Icon>
+          <Icon><Image src={call} alt="phone" /></Icon>
           <Info>
             <Label>Get in touch</Label>
-            <Value>+94 77 604 4021</Value>
+            <Value>+94 77 123 4567</Value> {/* Example contact number */}
           </Info>
         </ContactOption>
         <ContactOption>
-          <Icon><Image src={location} alt="email"/></Icon>
+          <Icon><Image src={location} alt="location" /></Icon>
           <Info>
-            <Label>Location</Label>
-            <Value>Jaffna, Sri Lanka</Value>
+            <Label>Office Location</Label>
+            <Value>Colombo, Sri Lanka</Value> {/* Example location */}
           </Info>
         </ContactOption>
       </ContactOptions>
@@ -48,7 +48,7 @@ const Container = styled.div`
   border: 3px solid #e5e7eb;
   border-radius: 0.5rem;
   margin: 2rem auto;
-  width: 80%;/* Optional: set a max-width for better control */
+  width: 80%; /* Optional: set a max-width for better control */
 `;
 
 const Title = styled.h2`
@@ -78,9 +78,11 @@ const Icon = styled.div`
   font-size: 2rem;
   margin-bottom: 0.5rem;
 `;
+
 const Image = styled.img`
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  width: 60px;  /* Ensure all icons have a consistent width */
+  height: 60px; /* Ensure all icons have a consistent height */
+  object-fit: contain;
 `;
 
 const Info = styled.div`

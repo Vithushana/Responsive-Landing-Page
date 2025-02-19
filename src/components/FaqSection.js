@@ -17,13 +17,13 @@ const Title = styled.h1`
   line-height: 1; // Adjust this value as needed
 
   span {
-    color: #e1240f;
+    color: #28a745;
   }
 `;
 
 const SubTitle = styled.h2`
   font-size: 18px;
-  color: #e1240f;
+  color: #28a745;
   text-align: center;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -95,34 +95,38 @@ const FaqSection = () => {
 
   const faqData = [
     {
-      question: 'How can FEASTO help me get my shop online?',
-      answer: 'If you’re thinking about selling a product online, all you’ll need to do is visit our website, sign up, and follow our easy step-by-step guide. Once you\'ve done these steps, your shop is ready to go online! You can edit your products anytime, add new ones, or update details, then publish your changes instantly.',
+      question: 'What is the purpose of the Garbage Management System?',
+      answer: 'The Garbage Management System aims to streamline waste collection, recycling, and disposal processes. It improves efficiency, reduces environmental impact, and ensures timely and safe garbage disposal.',
     },
     {
-      question: 'How secure is the FEASTO Ecommerce Website Builder?',
-      answer: 'We implement industry-standard security measures, including SSL encryption, secure payment gateways, and regular system updates, to ensure the protection of your online store and customer data.',
+      question: 'How does the system track garbage collection?',
+      answer: 'The system uses GPS and IoT-enabled sensors in garbage bins to monitor fill levels and schedule timely pickups. This ensures waste is collected before bins overflow.',
     },
     {
-      question: 'Can I connect FEASTO with other tools and services?',
-      answer: 'Yes, FEASTO allows you to integrate with popular tools and services to enhance your online store. Connect seamlessly with email marketing platforms, analytics tools, and more to optimize your e-commerce experience.',
+      question: 'Can this system be integrated with existing waste management infrastructure?',
+      answer: 'Yes, the system can be integrated with existing waste management infrastructure, including trucks, collection routes, and recycling facilities, to enhance operational efficiency.',
     },
     {
-      question: 'To what extent can I customize the pre-designed template?',
-      answer: 'You can personalize the pre-designed template by adjusting the theme colors and layouts to match your store`s branding and style preferences.',
+      question: 'What are the environmental benefits of using this system?',
+      answer: 'By optimizing collection routes, minimizing landfill use, and promoting recycling, the system helps reduce carbon emissions, waste, and environmental degradation.',
     },
     {
-      question: 'What kind of payment methods does Feasto support?',
-      answer: 'Currently, FEASTO supports cash payments and bank deposits only. However, if you need other payment methods, we`ll add them at minimal cost based on what you prefer..',
+      question: 'How do citizens report issues related to garbage collection?',
+      answer: 'Citizens can report garbage-related issues via the mobile app or website, including missed collections or overflowing bins. These reports are instantly sent to the relevant authorities for resolution.',
     },
     {
-      question: 'Is Feasto suitable for small businesses?',
-      answer: 'Feasto simplifies creating a stunning, professional web store with its user-friendly templates and quick setup. Our powerful features ensure a seamless experience.',
+      question: 'What types of waste does the system handle?',
+      answer: 'The system handles all types of waste, including recyclable materials, organic waste, hazardous waste, and general waste. It sorts and directs materials to appropriate recycling and disposal units.',
     },
     {
-      question: 'Can I cancel my subscription at any time?',
-      answer: 'Absolutely! You can cancel your subscription at any time directly from your account settings. If you need assistance, please contact our customer support team at Hai@feasto.io.',
+      question: 'Is there a feature for waste sorting and recycling?',
+      answer: 'Yes, the system promotes waste sorting by providing users with guidelines and incentives for sorting their waste correctly. It encourages recycling through awareness programs and rewards.',
     },
-    // Add more FAQs as needed
+    {
+      question: 'How can I track the status of my garbage collection request?',
+      answer: 'The system provides real-time tracking for garbage collection requests, allowing users to check when their garbage will be picked up and if any delays occur.',
+    },
+    // Add additional FAQs as required for your topic
   ];
 
   const handleFaqClick = (index) => {
@@ -132,7 +136,9 @@ const FaqSection = () => {
   return (
     <Section>
       <SubTitle>Frequently Asked Questions</SubTitle>
-      <Title>All you need to know <br /> about <span>FEASTO</span></Title>
+      <Title>
+        All you need to know <br /> about <span>Garbage Management System</span>
+      </Title>
       <FaqContainer>
         {faqData.map((faq, index) => (
           <FAQ

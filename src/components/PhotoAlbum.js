@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Photo1 from '../exp_img/Image Collection.png';
-import sign1 from '../exp_img/fluent_arrow-growth-24-filled.png';
+import sign1 from '../exp_img/lanuch.png';
 
 const PhotoAlbum = () => {
   return (
