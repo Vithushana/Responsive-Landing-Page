@@ -1,30 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Features from './components/Features';
-import Services from './components/Services';
-import RecyclingTips from './components/RecyclingTips';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import SignupPage from './components/SignupPage'; // Import the SignupPage component
+import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
-
-const Section = styled.section`
-  padding: auto;
-  background-color: #fff;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  p {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-`;
+import ContactSection from './components/ContactSection';
+import FaqSection from './components/FaqSection';
+import ResetPasswordPage from './components/RestPage';
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -33,26 +17,37 @@ const AppContainer = styled.div`
   justify-content: space-between;
 `;
 
+const Section = styled.section`
+  padding: 50px;
+  background-color: #f9f9f9;
+`;
+
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <AppContainer>
         <Header />
         <Routes>
-          <Route path="/" element={
-            <>
-              <Features />
-              <RecyclingTips />
-              <Services />
-              <Section id="resources">
-                <ContactSection />
-              </Section>
-            </>
-          } />
+          <Route path="/" element={isLoggedIn ? <Features /> : <Navigate to="/login" />} />
+          <Route path="/reset" element={<ResetPasswordPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
         </Routes>
-        <Footer />
+        
+        {/* Show FAQ and Contact Sections only if logged in */}
+        {isLoggedIn && (
+          <>
+            <Section id="faqSection">
+              <FaqSection />
+            </Section>
+            <Section id="resources">
+              <ContactSection />
+            </Section>
+            <Footer />
+          </>
+        )}
       </AppContainer>
     </Router>
   );

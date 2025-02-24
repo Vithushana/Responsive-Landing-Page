@@ -1,23 +1,51 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { Link } from 'react-router-dom'; // Import Link
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import backgroundImage from '../exp_img/home.jpeg';
+import logoImage from '../images/logo.png'; // Import your logo
+import { FaUser, FaEnvelope, FaPhone, FaLock } from 'react-icons/fa'; // Import icons
 
-const SignupContainer = styled.div`
+const SignupContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #85A98F;
+  background-image: url(${backgroundImage});
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 const SignupForm = styled.div`
   background: white;
-  border-radius: 8px;
+  margin-top: 100px;
+  border-radius: 12px;
   padding: 40px 30px;
   width: 100%;
   max-width: 400px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  img {
+    width: 120px; /* Adjust logo size */
+    margin-bottom: 20px;
+  }
 
   h2 {
     text-align: center;
@@ -40,22 +68,32 @@ const Label = styled.label`
   margin-bottom: 5px;
 `;
 
-const Input = styled.input`
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
-  transition: border-color 0.3s;
 
-  &:focus {
-    border-color: #28a745;
+  input {
+    border: none;
     outline: none;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  svg {
+    color: #aaa;
+    margin-right: 10px;
   }
 `;
 
+const Input = styled.input``;
+
 const Button = styled.button`
   padding: 12px 20px;
-  background-color: #28a745;
+  background-color: rgb(43, 83, 141);
   color: white;
   border: none;
   border-radius: 5px;
@@ -65,7 +103,7 @@ const Button = styled.button`
   text-align: center;
 
   &:hover {
-    background-color: #218838;
+    background-color: rgb(25, 48, 83);
   }
 `;
 
@@ -75,7 +113,7 @@ const RedirectLink = styled.div`
 
   a {
     text-decoration: none;
-    color: #28a745;
+    color: rgb(43, 83, 141);
     font-weight: bold;
 
     &:hover {
@@ -92,7 +130,7 @@ const SignupPage = () => {
     password: '',
   });
 
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -100,65 +138,74 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here, you can add the logic for handling form data, such as sending it to your API.
-
-    // Redirect to the login page after successful signup
     alert(`Welcome, ${formData.name}! Your account has been created.`);
-    navigate('/login'); // Redirect to the login page
+    navigate('/login');
   };
 
   return (
     <SignupContainer>
       <SignupForm>
-        <h2>Sign Up for Garbage Management</h2>
+        <img src={logoImage} alt="Logo" />
         <form onSubmit={handleSubmit}>
           <div>
-            <Label htmlFor="name">Full Name</Label>
-            <Input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+            <Label htmlFor="name"></Label>
+            <InputWrapper>
+              <FaUser />
+              <Input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </InputWrapper>
           </div>
           <div>
-            <Label htmlFor="email">Email Address</Label>
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+            <Label htmlFor="email"></Label>
+            <InputWrapper>
+              <FaEnvelope />
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </InputWrapper>
           </div>
           <div>
-            <Label htmlFor="phone">Phone Number</Label>
-            <Input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Enter your phone number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
+            <Label htmlFor="phone"></Label>
+            <InputWrapper>
+              <FaPhone />
+              <Input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+            </InputWrapper>
           </div>
           <div>
-            <Label htmlFor="password">Password</Label>
-            <Input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Create a password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
+            <Label htmlFor="password"></Label>
+            <InputWrapper>
+              <FaLock />
+              <Input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </InputWrapper>
           </div>
           <Button type="submit">Sign Up</Button>
         </form>

@@ -17,7 +17,7 @@ const Section = styled.section`
   h3 {
     max-width: 600px;
     margin: 0 auto 20px; /* Center horizontally and add bottom margin */
-    color: #28a745;
+    color:rgb(43, 83, 141);
     font-family: cursive;
   }
 
@@ -46,7 +46,7 @@ const ButtonContainer = styled.div`
 const SignUpButton = styled.a`
   padding: 11px 20px;
   text-align: center;
-  background-color: #28a745;
+  background-color:rgb(43, 83, 141);
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
@@ -104,7 +104,7 @@ const Heading = styled.h1`
 const SubHeading = styled.p`
   font-size: 14px;
   font-weight: bold;
-  color: #28a745;
+  color: rgb(43, 83, 141)#;
   margin-bottom: 40px;
 
   @media (max-width: 768px) {
@@ -130,7 +130,7 @@ const FeastoContainer = styled.div`
     margin-bottom: 20px;
 
     img {
-      width: 80px; /* Adjust image size as needed */
+      width: 60px; /* Adjust image size as needed */
       margin-right: 15px;
     }
 
@@ -184,7 +184,7 @@ const SearchBar = styled.div`
   background-color: #f0f0f0;
   border-radius: 30px;
   padding: 5px 20px;
-  border: 2px solid #28a745;
+  border: 2px solid rgb(43, 83, 141);
   width: 800px; /* Increased width to 500px */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
@@ -200,7 +200,7 @@ const SearchBar = styled.div`
 
   .search-icon {
     font-size: 20px;
-    color: #28a745;
+    color: rgb(43, 83, 141);
     margin-right: 10px;
   }
 
@@ -210,52 +210,52 @@ const SearchBar = styled.div`
 `;
 
 
-const GarbageManagement = () => {
+const HomeStock = () => {
   return (
     <Section id="features">
-      <SubHeading>Efficient, Safe, and Sustainable Waste Management</SubHeading>
+      <SubHeading>Smart Home Inventory & Grocery Management</SubHeading>
       <Heading>
-        Transform Your Waste Management with <br /> Our Service in 4 EasySteps
+        Keep Track of Your Household Essentials <br /> with Ease in 4 Simple Steps
       </Heading>
       <br />
       <ButtonContainer>
-        <SignUpButton href="#sign-up">Schedule a Pickup Now</SignUpButton>
-        <SignUpButton1 href="##pricing && #templetes">Request a Demo</SignUpButton1>
+        <SignUpButton href="#sign-up">Start Tracking Now</SignUpButton>
+        <SignUpButton1 href="#demo">Request a Demo</SignUpButton1>
       </ButtonContainer>
       <SearchBarContainer>
         <SearchBar>
           <FaSearch className="search-icon" />
-          <input type="text" placeholder="Search for services..." />
+          <input type="text" placeholder="Search for items..." />
         </SearchBar>
       </SearchBarContainer>
 
       <FeastoContainer>
         <div className="feasto-section">
-          <img src={LaunchLogo} alt="Launch Logo" />
+          <img src={LaunchLogo} alt="Inventory Logo" />
           <div>
-            <h2>Quick Waste Pickup</h2>
-            <p>Efficient and prompt waste collection service to keep your surroundings clean. Schedule pickups at your convenience.</p>
+            <h2>Smart Inventory Management</h2>
+            <p>Easily track your groceries, household essentials, and daily supplies in real-time.</p>
           </div>
         </div>
         <div className="feasto-section">
-          <img src={ResponseLogo} alt="Response Logo" />
+          <img src={ResponseLogo} alt="Reminder Logo" />
           <div>
-            <h2>Real-Time Updates</h2>
-            <p>Get notifications when your waste has been picked up or when it's ready for disposal. Stay informed at all times.</p>
+            <h2>Expiration Date Reminders</h2>
+            <p>Get timely alerts before food or household products expire, reducing waste and saving money.</p>
           </div>
         </div>
         <div className="feasto-section">
-          <img src={VisibilityLogo} alt="Visibility Logo" />
+          <img src={VisibilityLogo} alt="Budget Logo" />
           <div>
-            <h2>Transparent Pricing</h2>
-            <p>Our pricing is transparent and clear, so you know exactly what you’re paying for.</p>
+            <h2>Budget & Spending Insights</h2>
+            <p>Monitor your grocery expenses and optimize your spending on household essentials.</p>
           </div>
         </div>
         <div className="feasto-section">
-          <img src={ControlLogo} alt="Control Logo" />
+          <img src={ControlLogo} alt="Shopping List Logo" />
           <div>
-            <h2>Eco-Friendly Practices</h2>
-            <p>Our waste management services contribute to a greener planet through sustainable and eco-friendly practices.</p>
+            <h2>Automated Shopping Lists</h2>
+            <p>Generate dynamic shopping lists based on what’s running low in your inventory.</p>
           </div>
         </div>
       </FeastoContainer>
@@ -263,4 +263,5 @@ const GarbageManagement = () => {
   );
 };
 
-export default GarbageManagement;
+export default HomeStock;
+

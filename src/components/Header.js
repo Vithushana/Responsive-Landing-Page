@@ -13,21 +13,21 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
-  background-color: #D3F1DF;
+  padding: 10px;
+  background-color: rgb(186, 202, 226);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 `;
 
 const Logo = styled.img`
   margin-left: 60px;
-  width: 90px; /* Adjust width as per your preference */
+  width: 140px; /* Adjust width as per your preference */
   height: auto; /* Keep the aspect ratio intact */
 `;
 
 const NavLinks = styled.nav`
   display: flex;
-  gap: 20px;
+  gap: 35px;
   color: black;
   font-size: 19px;
   margin-left: 20px;
@@ -66,14 +66,14 @@ const SignUpButton = styled(Link)` /* Use Link for navigation */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #28a745;
+  background-color:rgb(43, 83, 141);
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
 
   &:hover {
-    background-color: #218838;
+    background-color:rgb(34, 25, 115);
   }
 
   @media (max-width: 768px) {
@@ -129,10 +129,10 @@ const Header = () => {
           {isOpen ? <FaTimes /> : <FaBars />}
         </HamburgerMenu>
         <NavLinks isOpen={isOpen}>
-          <NavLink to="about" smooth={true} duration={500} onClick={() => setIsOpen(false)}>About Us</NavLink>
-          <NavLink to="services" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Services</NavLink>
-          <NavLink to="recycling-tips" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Recycling Tips</NavLink>
-          <NavLink to="contact" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Contact Us</NavLink>
+          <NavLink to="home" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Home</NavLink>
+          <NavLink to="features" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Services</NavLink>
+          <NavLink to="faqSection" smooth={true} duration={500} onClick={() => setIsOpen(false)}>FAQ</NavLink>
+          <NavLink to="resources" smooth={true} duration={500} onClick={() => setIsOpen(false)}>Contact Us</NavLink>
         </NavLinks>
       </div>
       <div>

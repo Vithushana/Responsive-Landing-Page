@@ -17,7 +17,7 @@ const ContactSection = () => {
           <Icon><Image src={email} alt="email" /></Icon>
           <Info>
             <Label>Email address</Label>
-            <Value>info@legalreforms.lk</Value> {/* Example contact email */}
+            <Value>home@zone.lk</Value> {/* Example contact email */}
           </Info>
         </ContactOption>
         <ContactOption>

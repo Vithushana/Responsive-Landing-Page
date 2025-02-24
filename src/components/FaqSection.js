@@ -3,31 +3,22 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   padding: auto;
-  background-color: #fff;
+  background-color: #ffrgb(209, 210, 211)f;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const Title = styled.h1`
-  font-size: 50px;
+  font-size: 45px;
   text-align: center;
   margin-bottom: 30px;
   color: #333;
   line-height: 1; // Adjust this value as needed
 
   span {
-    color: #28a745;
+    color: rgb(43, 83, 141);
   }
-`;
-
-const SubTitle = styled.h2`
-  font-size: 18px;
-  color: #28a745;
-  text-align: center;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  line-height: 0.05; // Adjust this value as needed
 `;
 
 const FaqContainer = styled.div`
@@ -122,11 +113,6 @@ const FaqSection = () => {
       question: 'Is there a feature for waste sorting and recycling?',
       answer: 'Yes, the system promotes waste sorting by providing users with guidelines and incentives for sorting their waste correctly. It encourages recycling through awareness programs and rewards.',
     },
-    {
-      question: 'How can I track the status of my garbage collection request?',
-      answer: 'The system provides real-time tracking for garbage collection requests, allowing users to check when their garbage will be picked up and if any delays occur.',
-    },
-    // Add additional FAQs as required for your topic
   ];
 
   const handleFaqClick = (index) => {
@@ -135,9 +121,8 @@ const FaqSection = () => {
 
   return (
     <Section>
-      <SubTitle>Frequently Asked Questions</SubTitle>
       <Title>
-        All you need to know <br /> about <span>Garbage Management System</span>
+      Frequently Asked Questions<br /> about <span>HomeStock Management System</span>
       </Title>
       <FaqContainer>
         {faqData.map((faq, index) => (

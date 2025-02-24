@@ -11,24 +11,24 @@ const Footer = () => {
         <Logo>
           <LogoImage src={logo} alt="EcoManage" />
           <Description>
-            EcoManage provides a seamless platform for efficient 
+            HomeStock simplifies inventory management by helping you 
             <br />
-            garbage management, ensuring a cleaner and 
+            track groceries, household essentials, and supplies
             <br />
-            greener environment for everyone.
+            effortlessly, reducing waste and saving time.
           </Description>
           <SocialLinksContainer>
             <SocialIconLink href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} color='#28a745'/>
+              <FontAwesomeIcon icon={faLinkedin} color='rgb(43, 83, 141)'/>
             </SocialIconLink>
             <SocialIconLink href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <FontAwesomeIcon icon={faFacebook} color='#28a745' />
+              <FontAwesomeIcon icon={faFacebook} color='rgb(43, 83, 141)' />
             </SocialIconLink>
             <SocialIconLink href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} color='#28a745'/>
+              <FontAwesomeIcon icon={faInstagram} color='rgb(43, 83, 141)'/>
             </SocialIconLink>
             <SocialIconLink href="https://whatsapp.com" target="_blank" aria-label="WhatsApp">
-              <FontAwesomeIcon icon={faWhatsapp} color='#28a745'/>
+              <FontAwesomeIcon icon={faWhatsapp} color='rgb(43, 83, 141)'/>
             </SocialIconLink>
           </SocialLinksContainer>
         </Logo>
@@ -44,23 +44,23 @@ const Footer = () => {
           <Column>
             <ColumnTitle>Services</ColumnTitle>
             <Link href="#">Residential Waste Pickup</Link>
-            <Link href="#">Recycling Services</Link>
-            <Link href="#">Commercial Waste Solutions</Link>
-            <Link href="#">Hazardous Waste Management</Link>
+            <Link href="#">Grocery Tracking</Link>
+            <Link href="#">Expiration Date Reminders</Link>
+            <Link href="#">Automated Shopping Lists</Link>
           </Column>
           <Column>
             <ColumnTitle>Resources</ColumnTitle>
             <Link href="#">Blogs</Link>
             <Link href="#">Knowledge Base</Link>
-            <Link href="#">Sustainability Tips</Link>
+            <Link href="#">Inventory Tips</Link>
             <Link href="#">Help Center</Link>
           </Column>
           <Column>
             <ColumnTitle>Features</ColumnTitle>
-            <Link href="#">Real-Time Tracking</Link>
-            <Link href="#">Waste Segregation Guide</Link>
-            <Link href="#">Eco-Friendly Initiatives</Link>
-            <Link href="#">Custom Pickup Schedules</Link>
+            <Link href="#">Smart Pantry Insights</Link>
+            <Link href="#">Budget & Expense Tracking</Link>
+            <Link href="#">Shopping List Generator</Link>
+            <Link href="#">Family Shared Inventory</Link>
           </Column>
         </FooterLinks>
       </FooterTop>
@@ -155,7 +155,8 @@ const FooterLinks = styled.div`
   justify-content: space-around;
   width: 100%;
   max-width: 800px;
-  margin-right: 100px;
+  margin-right: 150px;
+  margin-top: 120px;
 
   @media (max-width: 768px) {
     flex-direction: row; /* Change to row for 2x2 layout */
@@ -193,7 +194,7 @@ const Link = styled.a`
   line-height: 1.9rem;
 
   &:hover {
-    color: #28a745;
+    color: #rgb(43, 83, 141);
   }
 `;
 
@@ -201,9 +202,9 @@ const FooterBottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #28a745;
+  border-top: 1px solid #rgb(43, 83, 141);
   padding: 1.5rem;
-  background-color: #28a745;
+  background-color: rgb(43, 83, 141);
   color: #fff;
 
   @media (max-width: 768px) {
